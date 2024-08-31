@@ -41,7 +41,7 @@ All risks are borne by the user
 
 # Register ?
 
-Click the following url to register : [https://t.me/BlumCryptoBot/app?startapp=ref_aPYIYj1oKc](https://t.me/BlumCryptoBot/app?startapp=ref_aPYIYj1oKc)
+Click the following url to register : [https://t.me/blum/app?startapp=tribe_ongkang_ongkang-ref_uJdjELBGq1](https://t.me/blum/app?startapp=tribe_ongkang_ongkang-ref_uJdjELBGq1)
 
 # How to Use
 
@@ -65,7 +65,7 @@ Here Config.json Description
 
 ## About Proxy
 
-Register on this site to get free proxy : [Here](https://www.webshare.io/?referral_code=dwj0m9cdi4mp)
+Register on this site to get free proxy : [Here](https://www.webshare.io/?referral_code=pdrev4nizc76)
 
 You can add your proxy list in `proxies.txt` and proxy format is like example below :
 
@@ -97,12 +97,12 @@ socks5://user:pass@127.0.0.1:6969
 
 2. Clone this repository
    ```shell
-   git clone https://github.com/akasakaid/blumtod.git
+   git clone https://github.com/hokireceh/blum.git
    ```
 
 3. goto blumtod directory
    ```
-   cd blumtod
+   cd blum
    ```
 
 4. install the require library
@@ -135,13 +135,13 @@ socks5://user:pass@127.0.0.1:6969
 2. Clone this repository
    
    ```shell
-   git clone https://github.com/akasakaid/blumtod.git
+   git clone https://github.com/hokireceh/blum.git
    ```
 
 3. goto blumtod directory
 
    ```shell
-   cd blumtod
+   cd blum
    ```
 
 4. Install the require library
@@ -173,12 +173,12 @@ socks5://user:pass@127.0.0.1:6969
 
 2. Clone this repository
    ```shell
-   git clone https://github.com/akasakaid/blumtod.git
+   git clone https://github.com/hokireceh/blum.git
    ```
 
 3. goto blumtod directory
    ```
-   cd blumtod
+   cd blum
    ```
 
 4. install the require library
@@ -208,18 +208,19 @@ copy(Telegram.WebApp.initData)
 # Run for 24/7 
 
 You can run the script bot for 24/7 using vps / rdp. You can use `screen` application in vps linux to running the script bot in background process
+Buy cheap RDP Here : [Sign Up](https://console.idcloudhost.com/referral/1n60rk)
 
-# Discussion
+# Follow me
+* https://facebook.com/hokireceh.official
+* https://instagram.com/hokireceh <br />
+  *You can contact me with social media in above*
+# Support me
 
-If you have an question or something you can ask in here : [@sdsproject_chat](https://t.me/sdsproject_chat)
-
-# Support My Work
-
-To support me you can buy me a coffee via website in below
-
-- [Indonesian] https://s.id/nusanqr (QRIS)
-- [Indonesian] https://trakteer.id/fawwazthoerif/tip
-- [Global] https://sociabuzz.com/fawwazthoerif/tribe
+* (Indonesia) 
+* (Global/International) https://sociabuzz.com/vania_gemash/tribe
+* Ton ```UQBOGHJAp7EXL5WgAw3E2wfOF7HBapd8YyQxU6wa7V1WZD6N```
+* Dogs ```UQBOGHJAp7EXL5WgAw3E2wfOF7HBapd8YyQxU6wa7V1WZD6N```
+* TRON / USDT (Tron20) ```TChYgcKG6zRwz5FP9UTZrAik3xDPa12M94```
 
 # QnA
 
