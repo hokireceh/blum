@@ -365,10 +365,10 @@ class Blum:
 {magenta}┃╭╮┃╰╮╰━━╯┃╭┫╭┫╋┣┫┻┫━┫╭┫
 {magenta}╰╯╰┻┻╯╱╱╱╱╰╯╰╯╰┳╯┣━┻━┻━╯
 {magenta}╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━╯
-									   		{putih}Blum Auto Claim for {hijau}Blum
-    										{hijau}Group : {putih}Sobat Ongkang Ongkang
-     										{putih}Channel : {hijau}Garapan Airdrop Indonesia 
-     										{hijau}Note : {putih}Hanya untuk pemakaian pribadi
+					{putih}Blum Auto Claim for {hijau}Blum
+    					{hijau}Group : {putih}Sobat Ongkang Ongkang
+     					{putih}Channel : {hijau}Garapan Airdrop Indonesia 
+     					{hijau}Note : {putih}Hanya untuk pemakaian pribadi
           """
        
         arg = argparse.ArgumentParser()
