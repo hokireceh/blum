@@ -6,8 +6,8 @@
 
 Join our Telegram group to stay updated and get instructions on how to use this tool:
 
-- [Sobat Ongkang Ongkang](https://t.me/ongkang_ongkang)
-- [Info Airdrop Real - Channel](https://t.me/info_airdrop_real)
+- [Garapan Airdrop - Channel](https://t.me/garapanairdrop_indonesia)
+- [Sobat Ongkang Ongkang - Group](https://t.me/ongkang_ongkang)
 
 ## 🚀 Run File
 
