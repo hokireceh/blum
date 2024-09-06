@@ -142,7 +142,7 @@ class BlumTod:
         return round(end / 1000)
 
     def get_friend(self, access_token):
-        url = "https://gateway.blum.codes/v1/friends/balance"
+        url = "https://user-domain.blum.codes/api/v1/friends/balance"
         headers = self.base_headers.copy()
         headers["Authorization"] = f"Bearer {access_token}"
         res = self.http(url, headers)
@@ -153,7 +153,7 @@ class BlumTod:
         self.log(f"{hijau}claim amount : {putih}{amount_claim}")
         self.log(f"{putih}can claim : {hijau}{can_claim}")
         if can_claim:
-            url_claim = "https://gateway.blum.codes/v1/friends/claim"
+            url_claim = "https://user-domain.blum.codes/api/v1/friends/claim"
             res = self.http(url_claim, headers, "")
             if res.json().get("claimBalance") is not None:
                 self.log(f"{hijau}success claim referral bonus !")
