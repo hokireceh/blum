@@ -47,7 +47,7 @@ class BlumTod:
             },
         )
         headers["Content-Length"] = str(len(data))
-        url = "https://gateway.blum.codes/v1/auth/provider/PROVIDER_TELEGRAM_MINI_APP"
+        url = "https://user-domain.blum.codes/api/v1/auth/provider/PROVIDER_TELEGRAM_MINI_APP"
         res = self.http(url, headers, data)
         token = res.json().get("token")
         if token is None:
