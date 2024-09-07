@@ -170,7 +170,7 @@ class Blum:
         self.log(f"{hijau}referral balance : {putih}{amount_claim}")
         self.log(f"{putih}can claim referral : {hijau}{can_claim}")
         if can_claim:
-            url_claim = "https://gateway.blum.codes/v1/friends/claim"
+            url_claim = "https://user-domain.blum.codes/api/v1/friends/claim"
             res = self.http(url_claim, headers, "")
             if res.json().get("claimBalance") is not None:
                 self.log(f"{hijau}success claim referral bonus !")
