@@ -366,8 +366,8 @@ class Blum:
 {magenta}╰╯╰┻┻╯╱╱╱╱╰╯╰╯╰┳╯┣━┻━┻━╯
 {magenta}╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━╯
 	{putih}Blum Auto Claim for {hijau}Blum
-	{hijau}Group : {putih}Sobat Ongkang Ongkang
-	{putih}Channel : {hijau}Garapan Airdrop Indonesia 
+	{hijau}Group : {putih}@airdrop_indonesia_update
+	{putih}Channel : {hijau}@GarapanAirdrop_Indonesia 
 	{hijau}Note : {putih}Hanya untuk pemakaian pribadi
           """
        
