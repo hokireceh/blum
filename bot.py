@@ -23,7 +23,7 @@ hitam = Fore.LIGHTBLACK_EX
 magenta = Fore.LIGHTMAGENTA_EX
 
 
-class Blum:
+class BlumTod:
     def __init__(self):
         self.base_headers = {
             "accept": "application/json, text/plain, */*",
@@ -177,7 +177,7 @@ class Blum:
         self.log(f"{hijau}referral balance : {putih}{amount_claim}")
         self.log(f"{putih}can claim referral : {hijau}{can_claim}")
         if can_claim:
-            url_claim = "https://user-domain.blum.codes/api/v1/friends/claim"
+            url_claim = "https://gateway.blum.codes/v1/friends/claim"
             res = self.http(url_claim, headers, "")
             if res.json().get("claimBalance") is not None:
                 self.log(f"{hijau}success claim referral bonus !")
@@ -271,7 +271,7 @@ class Blum:
         open("tokens.json", "w").write(json.dumps(tokens, indent=4))
 
     def is_expired(self, token):
-	    if token is None or isinstance(token,bool):
+        if token is None or isinstance(token,bool):
             return True
         header, payload, sign = token.split(".")
         payload = b64decode(payload + "==").decode()
@@ -332,7 +332,7 @@ class Blum:
                 if not os.path.exists(logfile):
                     open(logfile, "a")
                 logsize = os.path.getsize(logfile)
-                if (logsize / (1024 * 1024)) > 1:
+                if (logsize / 1024 / 1024) > 1:
                     open(logfile, "w").write("")
                 if data is None:
                     res = self.ses.get(url, headers=headers, timeout=30)
@@ -379,7 +379,6 @@ class Blum:
 	{putih}Channel : {hijau}@GarapanAirdrop_Indonesia 
 	{hijau}Note : {putih}Hanya untuk pemakaian pribadi
           """
-       
         arg = argparse.ArgumentParser()
         arg.add_argument(
             "--marinkitagawa", action="store_true", help="no clear the terminal !"
@@ -471,7 +470,7 @@ class Blum:
 
 if __name__ == "__main__":
     try:
-        app = Blum()
+        app = BlumTod()
         app.load_config()
         app.main()
     except KeyboardInterrupt:
