@@ -117,7 +117,7 @@ class HKBlum:
         return
 
     def get_balance(self, access_token, only_show_balance=False):
-        url = "https://game-domain.blum.codes/api/v1/user/balance"
+        url = "https://user-domain.blum.codes/api/v1/friends/balance"
         headers = self.base_headers.copy()
         headers["Authorization"] = f"Bearer {access_token}"
         while True:
@@ -204,7 +204,7 @@ class HKBlum:
     def playgame(self, access_token):
         url_play = "https://game-domain.blum.codes/api/v1/game/play"
         url_claim = "https://game-domain.blum.codes/api/v1/game/claim"
-        url_balance = "https://game-domain.blum.codes/api/v1/user/balance"
+        url_balance = "https://user-domain.blum.codes/api/v1/friends/balance"
         headers = self.base_headers.copy()
         headers["Authorization"] = f"Bearer {access_token}"
         while True:
