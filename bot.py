@@ -23,7 +23,7 @@ hitam = Fore.LIGHTBLACK_EX
 magenta = Fore.LIGHTMAGENTA_EX
 
 
-class BlumTod:
+class xBlum:
     def __init__(self):
         self.base_headers = {
             "accept": "application/json, text/plain, */*",
@@ -470,7 +470,7 @@ class BlumTod:
 
 if __name__ == "__main__":
     try:
-        app = BlumTod()
+        app = xBlum()
         app.load_config()
         app.main()
     except KeyboardInterrupt:
