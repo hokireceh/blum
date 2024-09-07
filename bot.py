@@ -23,7 +23,7 @@ hitam = Fore.LIGHTBLACK_EX
 magenta = Fore.LIGHTMAGENTA_EX
 
 
-class xBlum:
+class HKBlum:
     def __init__(self):
         self.base_headers = {
             "accept": "application/json, text/plain, */*",
@@ -470,7 +470,7 @@ class xBlum:
 
 if __name__ == "__main__":
     try:
-        app = xBlum()
+        app = HKBlum()
         app.load_config()
         app.main()
     except KeyboardInterrupt:
