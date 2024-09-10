@@ -23,7 +23,7 @@ hitam = Fore.LIGHTBLACK_EX
 magenta = Fore.LIGHTMAGENTA_EX
 
 
-class blum:
+class Blum:
     def __init__(self):
         self.base_headers = {
             "accept": "application/json, text/plain, */*",
@@ -56,12 +56,12 @@ class blum:
             return 0
 
         access_token = token.get("access")
-        self.log(f"{hijau}Sukses ngolehne akses token ")
+        self.log(f"{hijau}success get access token ")
         return access_token
 
     def solve_task(self, access_token):
         url_task = "https://game-domain.blum.codes/api/v1/tasks"
-	ignore_tasks = [
+        ignore_tasks = [
             "39391eb2-f031-4954-bd8a-e7aecbb1f192",  # wallet connect
             "d3716390-ce5b-4c26-b82e-e45ea7eba258",  # invite task
             "f382ec3f-089d-46de-b921-b92adfd3327a", # invite task
@@ -74,7 +74,7 @@ class blum:
         res = self.http(url_task, headers)
         for tasks in res.json():
             if isinstance(tasks, str):
-                self.log(f"{kuning}Gagal ngolehne daftar tugas !")
+                self.log(f"{kuning}failed get task list !")
                 return
             for k in list(tasks.keys()):
                 for t in tasks.get(k):
@@ -86,7 +86,7 @@ class blum:
                         claim_task_url = f"https://game-domain.blum.codes/api/v1/tasks/{task_id}/claim"
                         if task_id in ignore_tasks:
                             continue
-			if task_status == "FINISHED":
+                        if task_status == "FINISHED":
                             self.log(
                                 f"{kuning}already complete task id {putih}{task_id} !"
                             )
@@ -96,7 +96,7 @@ class blum:
                             _status = _res.json().get("status")
                             if _status == "FINISHED":
                                 self.log(
-                                    f"{hijau}Sukses marekne daftar tugas neng {putih}{task_id} !"
+                                    f"{hijau}success complete task id {putih}{task_id} !"
                                 )
                                 continue
 
@@ -108,7 +108,7 @@ class blum:
                             _status = _res.json().get("status")
                             if _status == "FINISHED":
                                 self.log(
-                                    f"{hijau}Sukses marekne daftar tugas neng {putih}{task_id} !"
+                                    f"{hijau}success complete task id {putih}{task_id} !"
                                 )
                                 continue
 
@@ -123,7 +123,7 @@ class blum:
         headers["Authorization"] = f"Bearer {access_token}"
         res = self.http(url, headers, "")
         balance = res.json().get("availableBalance", 0)
-        self.log(f"{hijau}Saldo setelah klaim : {putih}{balance}")
+        self.log(f"{hijau}balance after claim : {putih}{balance}")
         return
 
     def get_balance(self, access_token, only_show_balance=False):
@@ -133,7 +133,7 @@ class blum:
         while True:
             res = self.http(url, headers)
             balance = res.json().get("availableBalance", 0)
-            self.log(f"{hijau}Saldo : {putih}{balance}")
+            self.log(f"{hijau}balance : {putih}{balance}")
             if only_show_balance:
                 return
             timestamp = res.json().get("timestamp")
@@ -153,9 +153,9 @@ class blum:
             self.log(f"{hijau}now is time to claim farming !")
             return True, end_farming
 
-        self.log(f"{kuning}Uduk wektune macul !")
+        self.log(f"{kuning}not time to claim farming !")
         end_date = datetime.fromtimestamp(end_farming)
-        self.log(f"{hijau}Mari macul : {putih}{end_date}")
+        self.log(f"{hijau}end farming : {putih}{end_date}")
         return False, end_farming
 
     def start_farming(self, access_token):
@@ -171,8 +171,8 @@ class blum:
             break
 
         end_date = datetime.fromtimestamp(end / 1000)
-        self.log(f"{hijau}Lekas macul sampek sukses !")
-        self.log(f"{hijau}Mari macul : {putih}{end_date}")
+        self.log(f"{hijau}start farming successfully !")
+        self.log(f"{hijau}end farming : {putih}{end_date}")
         return round(end / 1000)
 
     def get_friend(self, access_token):
@@ -183,16 +183,16 @@ class blum:
         can_claim = res.json().get("canClaim", False)
         limit_invite = res.json().get("limitInvitation", 0)
         amount_claim = res.json().get("amountForClaim")
-        self.log(f"{putih}Bates undangan : {hijau}{limit_invite}")
-        self.log(f"{hijau}Saldo makelar : {putih}{amount_claim}")
-        self.log(f"{putih}Iso jukuk makelar : {hijau}{can_claim}")
+        self.log(f"{putih}limit invitation : {hijau}{limit_invite}")
+        self.log(f"{hijau}referral balance : {putih}{amount_claim}")
+        self.log(f"{putih}can claim referral : {hijau}{can_claim}")
         if can_claim:
             url_claim = "https://user-domain.blum.codes/api/v1/friends/claim"
             res = self.http(url_claim, headers, "")
             if res.json().get("claimBalance") is not None:
-                self.log(f"{hijau}Klaim bonus makelar sukses !")
+                self.log(f"{hijau}success claim referral bonus !")
                 return
-            self.log(f"{merah}Klaim bonus makelar gagal !")
+            self.log(f"{merah}failed claim referral bonus !")
             return
 
     def checkin(self, access_token):
@@ -201,14 +201,14 @@ class blum:
         headers["Authorization"] = f"Bearer {access_token}"
         res = self.http(url, headers)
         if res.status_code == 404:
-            self.log(f"{kuning}Uwes absen dino iki !")
+            self.log(f"{kuning}already check in today !")
             return
         res = self.http(url, headers, "")
         if "ok" in res.text.lower():
             self.log(f"{hijau}success check in today !")
             return
 
-        self.log(f"{merah}Gagal absen dino iki !")
+        self.log(f"{merah}failed check in today !")
         return
 
     def playgame(self, access_token):
@@ -221,9 +221,9 @@ class blum:
             res = self.http(url_balance, headers)
             play = res.json().get("playPasses")
             if play is None:
-                self.log(f"{kuning}Gagal ngolehne tiket rondo !")
+                self.log(f"{kuning}failed get game ticket !")
                 break
-            self.log(f"{hijau}Kowe nduweni {putih}{play}{hijau} tiket rondo")
+            self.log(f"{hijau}you have {putih}{play}{hijau} game ticket")
             if play <= 0:
                 return
             for i in range(play):
@@ -247,7 +247,7 @@ class blum:
                     res = self.http(url_claim, headers, data)
                     if "OK" in res.text:
                         self.log(
-                            f"{hijau}Sukses ngolehne {putih}{point}{hijau} seko game !"
+                            f"{hijau}success earn {putih}{point}{hijau} from game !"
                         )
                         self.get_balance(access_token, only_show_balance=True)
                         break
@@ -256,7 +256,7 @@ class blum:
                     if message == "game session not finished":
                         continue
 
-                    self.log(f"{merah}Gagal ngolehne {putih}{point}{merah} seko game !")
+                    self.log(f"{merah}failed earn {putih}{point}{merah} from game !")
                     break
 
     def data_parsing(self, data):
@@ -359,7 +359,7 @@ class blum:
                 return res
 
             except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
-                self.log(f"{merah}Jangan panik ya dek ya !")
+                self.log(f"{merah}connection error/ connection timeout !")
 
             except requests.exceptions.ProxyError:
                 self.log(f"{merah}bad proxy")
@@ -372,7 +372,7 @@ class blum:
             jam = str(jam).zfill(2)
             menit = str(menit).zfill(2)
             detik = str(detik).zfill(2)
-            print(f"{putih}Ngenteni rondo {jam}:{menit}:{detik} ", flush=True, end="\r")
+            print(f"{putih}waiting until {jam}:{menit}:{detik} ", flush=True, end="\r")
             t -= 1
             time.sleep(1)
         print("                          ", flush=True, end="\r")
@@ -414,8 +414,8 @@ class blum:
         datas = [i for i in open(args.data, "r").read().splitlines() if len(i) > 0]
         proxies = [i for i in open(args.proxy).read().splitlines() if len(i) > 0]
         use_proxy = True if len(proxies) > 0 else False
-        self.log(f"{hijau}Total akun : {putih}{len(datas)}")
-        self.log(f"{biru}Ngawe proxy : {putih}{use_proxy}")
+        self.log(f"{hijau}total account : {putih}{len(datas)}")
+        self.log(f"{biru}use proxy : {putih}{use_proxy}")
         if len(datas) <= 0:
             self.log(f"{merah}add data account in {args.data} first")
             sys.exit()
@@ -423,11 +423,11 @@ class blum:
         while True:
             list_countdown = []
             for no, data in enumerate(datas):
-                self.log(f"{hijau}Nomer akun - {putih}{no + 1}")
+                self.log(f"{hijau}account number - {putih}{no + 1}")
                 data_parse = self.data_parsing(data)
                 user = json.loads(data_parse["user"])
                 userid = user["id"]
-                self.log(f"{hijau}Login gawe : {putih}{user['first_name']}")
+                self.log(f"{hijau}login as : {putih}{user['first_name']}")
                 if use_proxy:
                     proxy = proxies[no % len(proxies)]
                 self.set_proxy(proxy if use_proxy else None)
@@ -481,9 +481,8 @@ class blum:
 
 if __name__ == "__main__":
     try:
-        app = blum()
+        app = Blum()
         app.load_config()
         app.main()
     except KeyboardInterrupt:
         sys.exit()
-
