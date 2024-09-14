@@ -39,6 +39,7 @@ class Blum:
             "accept-language": "en,en-US;q=0.9",
         }
         self.garis = putih + "~" * 50
+        self.total_balance = 0
 
     def renew_access_token(self, tg_data):
         headers = self.base_headers.copy()
@@ -139,7 +140,15 @@ class Blum:
         headers["Authorization"] = f"Bearer {access_token}"
         while True:
             res = self.http(url, headers)
-            balance = res.json().get("availableBalance", 0)
+            balance = res.json().get("availableBalance")
+            if balance is None:
+                balance = 0
+            else:
+                try:
+                    balance = float(balance)
+                except ValueError:
+                    balance = 0
+            self.total_balance += int(balance)
             self.log(f"{hijau}balance : {putih}{balance}")
             if only_show_balance:
                 return
@@ -477,6 +486,9 @@ class Blum:
                         break
                 print(self.garis)
                 self.countdown(self.DEFAULT_INTERVAL)
+            
+            self.log(f"{hijau}Total saldo semua akun: {putih}{self.total_balance}")
+            
             min_countdown = min(list_countdown)
             now = int(time.time())
             result = min_countdown - now
