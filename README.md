@@ -17,13 +17,17 @@ Join our Telegram group to stay updated and get instructions on how to use this 
 ```
 git clone https://github.com/hokireceh/blum.git && cd blum && python -m pip install -r requirements.txt
 ```
+```
+pip install python-telegram-bot
+```
 
 | Run with Proxy                   | Run without Proxy   |
 | -------------------------------- | ------------------- |
 | `nano data.txt` `python bot.py` | `bot.py` `data.txt` |
 
 ## ⚠️ Note
-
+- TELEGRAM_BOT_TOKEN = "ID-TOKEN-BOT"
+- TELEGRAM_CHAT_ID = "ID-TELEGRAM"
 - Get auth data (`query_id=... /user=...`) in the `Application` tab in DevTools.
 - Auto features: Change `false` to `true` in the `config.json` file.
 - Supported commands: `/run_bot` `/query_id` `/proxy` `/proxy_web` (Join group to use these commands).
