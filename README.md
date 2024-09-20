@@ -26,6 +26,9 @@ pip install python-telegram-bot
 | -------------------------------- | ------------------- |
 | `nano data.txt` `python bot.py` | `bot.py` `data.txt` |
 
+![image](https://github.com/user-attachments/assets/ae3e62c7-63dd-4c6f-979b-f81f2c9aad71)
+
+
 ## ⚠️ Note
 - Add log to telegram Bot
 - Get auth data (`query_id=... /user=...`) in the `Application` tab in DevTools.
