@@ -10,7 +10,8 @@ Join our Telegram group to stay updated and get instructions on how to use this 
 - [Sobat Ongkang Ongkang - Group](https://t.me/ongkang_ongkang)
 - I recommend you use [VPS Here](https://console.idcloudhost.com/referral/1n60rk)
 - Website with the cheapest proxy price $1/GB [Here](https://dataimpulse.com/?aff=52576)
-- If you want to buy a VPS at Kaimi, please DM us
+- If you want to buy a VPS at me, please DM us
+- Disclaimer friends, I use this for personal use. use at your own risk.
 
 ## 🚀 Run File
 
