@@ -27,8 +27,7 @@ pip install python-telegram-bot
 | `nano data.txt` `python bot.py` | `bot.py` `data.txt` |
 
 ## ⚠️ Note
-- TELEGRAM_BOT_TOKEN = "ID-TOKEN-BOT"
-- TELEGRAM_CHAT_ID = "ID-TELEGRAM"
+- Add log to telegram Bot
 - Get auth data (`query_id=... /user=...`) in the `Application` tab in DevTools.
 - Auto features: Change `false` to `true` in the `config.json` file.
 - Supported commands: `/run_bot` `/query_id` `/proxy` `/proxy_web` (Join group to use these commands).
