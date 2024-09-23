@@ -40,8 +40,8 @@ log_file = "http.log"
 proxy_file = "proxies.txt"
 data_file = "data.txt"
 config_file = "config.json"
-TELEGRAM_BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
-TELEGRAM_CHAT_ID = "YOUR_CHAT_ID"
+TELEGRAM_BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
+TELEGRAM_CHAT_ID = "CHAT_ID"
 async def send_to_telegram(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
@@ -50,6 +50,7 @@ async def send_to_telegram(message):
     }
     async with httpx.AsyncClient() as client:
         await client.post(url, data=payload)
+
 
 class Config:
     def __init__(self, auto_task, auto_game, auto_claim, low, high):
@@ -60,7 +61,7 @@ class Config:
         self.high = high
 
 
-class Blum:
+class BlumTod:
     def __init__(self, id, query, proxies, config: Config):
         self.p = id
         self.query = query
@@ -107,14 +108,21 @@ class Blum:
         asyncio.create_task(send_to_telegram(clean_msg))
 
     async def ipinfo(self):
-        url = "https://ipinfo.io/json"
-        ipinfo_url = "https://api.ipify.org/"
-        ipgeo_url = "https://www.binance.com/bapi/accounts/v2/public/account/ip/country-city-short"
+        ipinfo1_url = "https://ipapi.co/json/"
+        ipinfo2_url = "https://ipwho.is/"
+        ipinfo3_url = "https://freeipapi.com/api/json"
         try:
-            res = await self.ses.get(ipinfo_url)
-            ip = res.text
-            res = await self.ses.get(ipgeo_url)
-            country = res.json().get("data").get("country")
+            res = await self.ses.get(ipinfo1_url)
+            ip = res.json().get("ip")
+            country = res.json().get("country")
+            if not ip:
+                res = await self.ses.get(ipinfo2_url)
+                ip = res.json().get("ip")
+                country = res.json().get("country_code")
+                if not ip:
+                    res = await self.ses.get(ipinfo3_url)
+                    ip = res.json().get("ipAddress")
+                    country = res.json().get("countryCode")
             self.log(f"{green}ip : {white}{ip} {green}country : {white}{country}")
         except json.decoder.JSONDecodeError:
             self.log(f"{green}ip : {white}None {green}country : {white}None")
@@ -561,7 +569,7 @@ async def main():
 
             async def bound(sem, params):
                 async with sem:
-                    return await Blum(*params).start()
+                    return await BlumTod(*params).start()
 
             while True:
                 datas, proxies = await get_data(args.data, args.proxy)
@@ -578,7 +586,7 @@ async def main():
                 datas, proxies = await get_data(args.data, args.proxy)
                 result = []
                 for no, data in enumerate(datas):
-                    res = await Blum(
+                    res = await BlumTod(
                         id=no, query=data, proxies=proxies, config=config
                     ).start()
                     result.append(res)
