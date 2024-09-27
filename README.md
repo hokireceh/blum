@@ -17,8 +17,16 @@ Join our Telegram group to stay updated and get instructions on how to use this 
 
 - Linux / Termux
 ```
-git clone https://github.com/hokireceh/blum.git && cd blum && python -m pip install -r requirements.txt
+git clone https://github.com/hokireceh/blum.git ```
+
 ```
+cd blum
+```
+
+```
+python -m pip install -r requirements.txt
+```
+
 ```
 pip install python-telegram-bot
 ```
