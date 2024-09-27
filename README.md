@@ -1,6 +1,6 @@
 # AUTO CLAIM FOR BLUM 
 
-🔗 **KLIK TO GET USER/QUERY**: [BLUM](https://t.me/blum/app?startapp=tribe_ongkang_ongkang-ref_uJdjELBGq1)
+🔗 **KLIK TO GET USER/QUERY**: [BLUM]()
 
 ## 📢 Telegram Group
 
