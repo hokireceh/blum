@@ -1,6 +1,6 @@
 # AUTO CLAIM FOR BLUM 
 
-🔗 **KLIK TO GET USER/QUERY**: [BLUM]()
+🔗 **KLIK TO GET USER/QUERY**: [BLUM](https://t.me/garapanairdrop_indonesia)
 
 ## 📢 Telegram Group
 
