@@ -16,10 +16,18 @@ Join our Telegram group to stay updated and get instructions on how to use this 
 ## 🚀 Run File
 
 - Linux / Termux
-```git clone https://github.com/hokireceh/blum.git```
-```cd blum```
-```python -m pip install -r requirements.txt```
-```pip install python-telegram-bot```
+```
+git clone https://github.com/hokireceh/blum.git
+```
+```
+cd blum
+```
+```
+python -m pip install -r requirements.txt
+```
+```
+pip install python-telegram-bot
+```
 
 | Run with Proxy                   | Run without Proxy   |
 | -------------------------------- | ------------------- |
