@@ -42,7 +42,7 @@ proxy_file = "proxies.txt"
 data_file = "data.txt"
 config_file = "config.json"
 TELEGRAM_BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
-TELEGRAM_CHAT_ID = "CHAT_ID"
+TELEGRAM_CHAT_ID = "TELEGRAM_CHAT_ID"
 async def send_to_telegram(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
